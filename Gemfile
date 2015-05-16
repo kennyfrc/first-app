@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
+
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -14,7 +16,9 @@ group :development do
 end
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
+
+gem 'bootstrap-sass', '3.2.0.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
