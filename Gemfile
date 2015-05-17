@@ -18,6 +18,10 @@ end
 # Use SCSS for stylesheets
 gem 'sass-rails'
 
+gem 'pry-rails'
+
+gem 'faker'
+
 gem 'bootstrap-sass', '3.2.0.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
