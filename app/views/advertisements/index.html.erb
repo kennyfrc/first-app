@@ -1,0 +1,4 @@
+<h1>All Sponsored Content</h1>
+<% @advertisements.each do |advertisement| %>
+  <p><%= link_to advertisement.title, advertisement_path(advertisement.id) %></p>
+<% end %>
