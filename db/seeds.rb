@@ -42,8 +42,8 @@ end
  # Create Advertisment
 
  Advertisement.create!(
-    title: "Le Fwuff Bistwo",
-    copy: "Steak, Spinach, Fwuff, and Fwop in Bear Bistwo",
+    title: "Foo Bar Bistro",
+    copy: "Get your steak and spinach in foo bar bistro!",
     price: "1"
   )
 
@@ -65,7 +65,8 @@ end
  user.skip_reconfirmation!
  user.update_attributes!(
    email: 'fxkennyfrc@gmail.com',
-   password: 'absinthe12'
+   password: 'absinthe12',
+   role: 'admin'
  )
 
 

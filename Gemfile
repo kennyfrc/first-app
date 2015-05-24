@@ -6,6 +6,8 @@ gem 'rails', '4.2.1'
 
 gem 'devise', '~> 3.4.0'   # or later
 
+gem 'pundit'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
