@@ -49,6 +49,14 @@ posts = Post.all
   )
 end
 
+# Create Summaries
+10.times do
+  Summary.create!(
+    post: posts.sample,
+  )
+end
+summaries = Summary.all
+
  # Create Advertisment
 
  Advertisement.create!(
