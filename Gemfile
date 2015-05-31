@@ -8,6 +8,8 @@ gem 'devise', '~> 3.4.0'   # or later
 
 gem 'pundit'
 
+gem 'redcarpet'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
