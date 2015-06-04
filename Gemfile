@@ -16,6 +16,8 @@ gem 'mini_magick'
 
 gem 'fog'
 
+gem 'will_paginate', '~> 3.0.5'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
