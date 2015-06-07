@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'summaries/create'
 
   get 'summaries/show'
@@ -13,7 +14,9 @@ Rails.application.routes.draw do
    resources :advertisements
    
    resources :topics do
-     resources :posts, except: [:index]
+     resources :posts, except: [:index] do
+       resources :comments, only: [:create]
+     end
    end
 
   get 'about' => 'welcome#about'

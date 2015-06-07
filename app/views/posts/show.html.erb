@@ -4,7 +4,6 @@
   <div class="col-md-8">
 
       <small>
-
        <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
        submitted <%= time_ago_in_words(@post.created_at) %> ago by
        <%= @post.user.name %>
@@ -18,4 +17,12 @@
       <%= link_to "Summary", summaries_show_path(@summary), class: 'btn btn-success' %> 
     <% end %>
   </div>
+      
 </div>
+<h3> Comments </h3>
+<% logger.debug "Topic is #{@topic}"%> 
+      <% logger.debug "Post is #{@post}"%> 
+      <% logger.debug "Comment is #{@comment}"%> 
+
+      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
+      <%= render partial: 'comments/comment', locals: {comments: @comments} %>
