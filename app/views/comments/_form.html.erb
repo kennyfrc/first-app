@@ -1,4 +1,14 @@
  <%= form_for [topic, post, post.comments.new] do |f| %>
+ <% if comment.errors.any? %>
+     <div class="alert alert-danger">
+       <h4>There are <%= pluralize(comment.errors.count, "error") %>.</h4>
+       <ul>
+         <% comment.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+         <% end %>
+       </ul>
+     </div>
+   <% end %>
      <%= f.label :add_a_comment %>
      <%= f.text_area :body, rows: 1, columns: 2, class: 'form-control', placeholder: "Enter comment here" %>
      <br>

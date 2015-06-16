@@ -15,14 +15,16 @@
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
       <%= link_to "Summary", summaries_show_path(@summary), class: 'btn btn-success' %> 
+          <% if policy(@post).destroy? %>
+      <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this post?' } %>
+     <% end %>
     <% end %>
   </div>
       
 </div>
 <h3> Comments </h3>
-<% logger.debug "Topic is #{@topic}"%> 
-      <% logger.debug "Post is #{@post}"%> 
-      <% logger.debug "Comment is #{@comment}"%> 
 
-      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
-      <%= render partial: 'comments/comment', locals: {comments: @comments} %>
+      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+      <% @comments.each do |comment| %>
+        <%= render partial: 'comments/comment', locals: {comment: comment} %>
+      <% end %>
